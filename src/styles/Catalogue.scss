@@ -1,0 +1,14 @@
+.eventContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+.eventInfoContainer{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+img{
+    width:400px;
+}
