@@ -1,6 +1,7 @@
 import './App.css';
-import Catalogue from './components/Catalogue';
 import SearchBar from './components/SearchBar';
+import Header from "./components/Header"
+import { Footer } from './components/Footer';
 
 
 function App() {
@@ -8,7 +9,9 @@ function App() {
  
   return (
     <>
+      <Header/>
       <SearchBar/>
+      <Footer/>
     </>
   )
 }

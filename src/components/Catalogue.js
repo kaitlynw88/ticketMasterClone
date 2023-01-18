@@ -5,28 +5,20 @@ import "../styles/Catalogue.scss"
 function Catalogue(props) {
     // Call useState to create an events State
     const [events, setEvents] = useState([]);
-    const [userDate, setUserDate] = useState("")
     
     
     // after our component gets mounted
     useEffect(() => {
-    
-        const getDate = ()=>{
-            const date = new Date()
-            const dateString = date.toISOString()
-            console.log(dateString)
-            setUserDate(dateString)
-        }
+
         // Make an AJAX call to TMDB to get a list of popular movies from a specific year
         axios({
             url: 'https://app.ticketmaster.com/discovery/v2/events',
             params: {
                 apikey: "aM3gP6nWpJg8BaCAGqMJS1TKhv73ipJ8",
-                // preferredCountry: "ca",
                 sort: "date,asc",
                 city: props.city,
-                endDateTime:userDate,
-                startDateTime: userDate,
+                endDateTime:props.date,
+                startDateTime: props.date,
                 keyword: props.eventType
             }
         }).then((response) => {
@@ -37,14 +29,10 @@ function Catalogue(props) {
         //get current date time
         
         
-    }, [props.city], userDate)
-
-
-    console.log(events)
-
+    }, [props.city, props.date, props.eventType])
 
     return(
-        <>{!props.city || !userDate && 
+        <>{!props.city || (!props.date && 
             <ul className='catalogue'>
                 {
                     events.map((event) => (
@@ -63,7 +51,7 @@ function Catalogue(props) {
                 }
             </ul>
         
-        }
+        )}
         </>
 
 
