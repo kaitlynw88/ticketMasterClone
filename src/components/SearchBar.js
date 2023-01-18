@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import Catalogue from './Catalogue'
 
+import "../styles/SearchBar.scss"
+
 function SearchBar() {
     //state to listen to input change
     const [userInput, setUserInput] = useState("");
@@ -36,7 +38,7 @@ function SearchBar() {
     };
 
     return (
-        <>
+        <div className='searchBarContainer'>
             <form onSubmit={handleSubmit}>
                 <input type="text" placeholder="city" onChange={handleChange} />
 
@@ -54,7 +56,7 @@ function SearchBar() {
                 eventType={eventOption}
                 date={userDate}
             />
-        </>
+        </div>
     );
 }
 

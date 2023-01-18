@@ -1,6 +1,7 @@
 .eventContainer{
     display: flex;
     flex-direction: column;
+    border:2px solid red;
 }
 
 .eventInfoContainer{
@@ -9,6 +10,6 @@
     align-items: center;
 }
 
-img{
+.eventContainer img{
     width:400px;
 }
