@@ -39,6 +39,7 @@ function SearchBar() {
 
     return (
         <div className='searchBarContainer'>
+            <p>Pick a city and an event type to get started!!!</p>
             <form onSubmit={handleSubmit}>
                 <input type="text" placeholder="city" onChange={handleChange} />
 
